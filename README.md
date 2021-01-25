@@ -6,7 +6,7 @@ Web Conferencing System
 
 BigBlueButton is an open source web conferencing system for online learning.
 
-Open source - Full access to BigBlueButton’s source code under an open source license. With the source code it is easily possible to deploy your own BigBlueButton server.Anybody can use it personally or for commercial purposes. It is designed with all facilities for online web conferencing or online learning platforms. 
+Open source - Full access to BigBlueButton’s source code under an open source license. With the source code it is easily possible to deploy your own BigBlueButton server. It is designed with all facilities for online web conferencing or online learning platforms. 
 
 
 # Overview :
@@ -32,11 +32,12 @@ Minimum Hardware & Software requirements :
 
 # Installation :
 
-Remember BigBlueButton only supports Ubuntu 16.04 64 bit server and Ubuntu 18.04 Server. We will install BigBlueButton in Ubuntu 18.04.  After Installation , We have to make ready our Server for BigBlueButton. 
+BigBlueButton only supports Ubuntu 16.04 64 bit server and Ubuntu 18.04 Server. We will install BigBlueButton in Ubuntu 18.04.  After Installation , We have to make ready our Server for BigBlueButton. 
 
 Remember :
 
-When Installing BigBlueButton there are two choices: One Scripted (bbb-install.sh) and another step by step process installation. It is also mendetory to install BBB, you have to be login  as a "ROOT" user. 
+When Installing BigBlueButton there are two choices: One Scripted (bbb-install.sh) and another step by step process installation. It is also mendetory to install BBB, 
+Installation should be done as the "ROOT" User.
 
 Here, I will just mention the steps ,but if you want to know more please check the official documents 
 
