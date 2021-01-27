@@ -1,9 +1,37 @@
-# web-conferencing-system-docs
-Web Conferencing System
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+<h3 align="center">Web Conferencing System</h3>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#what-is-bbb">What is BigBlueButton</a>
+      <ul>
+        <li><a href="#Overview">Overview</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#greenlight">Greenlight</a>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#configuration">Configure Greenlight</a></li>
+      </ul>
+      </li>
+    <li><a href="#troubleshooting">Troubleshooting and Feedback</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
 
-# What is BigBlueButton ?
-
+##What is BigBlueButton
 BigBlueButton is an open source web conferencing system for online learning.
 
 Open source - Full access to BigBlueButton’s source code under an open source license. With the source code it is easily possible to deploy your own BigBlueButton server. It is designed with all facilities for online web conferencing or online learning platforms. 
@@ -41,7 +69,7 @@ Installation should be done as the "ROOT" User.
 
 Here, I will just mention the steps ,but if you want to know more please check the official documents 
 
-#  https://docs.bigbluebutton.org/
+[BigBlueButton Documents](https://docs.bigbluebutton.org/)
 
 Steps :
 
