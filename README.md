@@ -1,6 +1,7 @@
 <!-- TABLE OF CONTENTS -->
+
+<h2 align="center">Web Conferencing System</h2>
 <details open="open">
-<h3 align="center">Web Conferencing System</h3>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -27,57 +28,45 @@
 </details>
 
 <!-- bigbluebutton -->
-## BigBlueButton
+### BigBlueButton
 
 BigBlueButton is an open source web conferencing system for online learning.
 
 Open source - Full access to BigBlueButton’s source code under an open source license. With the source code it is easily possible to deploy your own BigBlueButton server. It is designed with all facilities for online web conferencing or online learning platforms. 
 
 <!-- overview -->
-## overview
+### overview
 
 BigBlueButton is an HTML5-based web application. BigBlueButton runs in a web browser. There is no plugin to download, no software to install. BigBlueButton provides high-quality audio, video, and screen sharing using the browser’s built-in support for web real-time communication (WebRTC) libraries.
 
 WebRTC is a standard supported by all major browsers, including Chrome, FireFox, Safari, and Safari Mobile. For best results on desktop and laptops, BBB recommends Chrome or Firefox.
 
 <!-- getting_started -->
-## Getting Started
+### Getting Started
 
 
-### Before Installation :
+<!-- prerequisites -->
 
+#### prerequisites :
 
-Minimum Hardware & Software requirements :
+System Requirements for BBB :
 
-=> Ubuntu 18.04 64 bit 
-=> 8/16 GB Memory
-=> 4/8 CPU Cores
-=> 50/500 GB free disk space without recording or with recording facility
-=> TCP ports 80 & 443  are accessible
-=> UDP ports 16384 - 32768 are accessible
-=> TCP port 80 and 443 are not in use by another web application or reverse proxy
-=> A Hostname for setup of a SSL certificate
-
-| Requirements | Minimum | Recommended|
-<!--
-| ----------- | --------------- | --------------- | --------------- |--------------- | -->
-|  | 64 bit | 8 GB | 4 | 50 GB|
-
-
-| CPU | x64 Capable Ubuntu 16.04 or 18.04 | Row 2 Column 3 |
-| OS Version | Row 3 Column 2 | Row 3 Column 3 |
-| RAM | Row 3 Column 2 | Row 3 Column 3 |
-| CPU | Row 3 Column 2 | Row 3 Column 3 |
-| DISK SPACE | Row 3 Column 2 | Row 3 Column 3 |
-| PORTS | Row 3 Column 2 | Row 3 Column 3 |
-| DOMAIN | Row 3 Column 2 | Row 3 Column 3 |
-
-| SSL | Row 3 Column 2 | Row 3 Column 3 |
+| Requirements | Minimum | Recommended |
+|:-----:|:----:|:-----------:|
+| OS | Ubuntu 16.04 or 18.04 64 Bit |
+| Core | 2/4 Core | 8 Core |
+|Memory | 8 GB | 16 GB |
+| Hdd | 50 GB (Without Recording) | 500 GB (With Recording)|
+| TCP Ports | 80 & 443 are accessible  |
+| UDP Ports| 16384 - 32768 are accessible |
+| HostName| A fully qualified domain name |
+| SSL Certificate| Use the Let's Encrypt [SSL](https://letsencrypt.org/)  |
+||||
 
 
 
 <!-- installation -->
-## Installation :
+### Installation :
 
 BigBlueButton only supports Ubuntu 16.04 64 bit server and Ubuntu 18.04 Server. We will install BigBlueButton in Ubuntu 18.04.  After Installation , We have to make ready our Server for BigBlueButton. 
 
@@ -90,7 +79,7 @@ Here, I will just mention the steps ,but if you want to know more please check t
 
 [BigBlueButton Documents](https://docs.bigbluebutton.org/)
 
-Steps :
+#### Installation Process :
 
 Check the local of the server is  en_us.UTF-8 
 
@@ -169,31 +158,32 @@ $ echo "deb https://ubuntu.bigbluebutton.org/bionic-230/ bigbluebutton-bionic ma
 ```
 
 
-### Next update the repository
+#### Next update the repository
 
 ```bash
 $ sudo apt-get update
 ```
 
-### Install BigBlueButton script by following command.
+
+#### Install BigBlueButton script by following command (If we use script than we don't need to configure SSL certificate, It will automatically create certification).
 
 ```bash
 $ wget -qO- https://ubuntu.bigbluebutton.org/bbb-install.sh | bash -s -- -v bionic-230-dev -s 'Your FQDN Name' -e 'Your Email Address'  -a -w
 ```
 
-### After the Installation finishes, You can restart the BigBlueButton
+#### After the Installation finishes, You can restart the BigBlueButton
 
 ```bash
 $ sudo bbb-conf --restart
 ```
 
-### After the restart finishes , check the setup by following command.
+#### After the restart finishes , check the setup by following command.
 
 ```bash
 $ sudo bbb-conf --check
 ```
 
-### Now check the greenlight and docker is installed in your home directory otherwise follow the following process.
+#### Now check the greenlight and docker is installed in your home directory otherwise follow the following process.
 
 ```bash
 $ docker -v (check Docker is installed by running)
@@ -201,10 +191,10 @@ $ docker -v (check Docker is installed by running)
 
 <!-- greenlight -->
 
-## Greenlight
+### Greenlight :
 
 <!-- overview-of-greenlight -->
-### Overview of GreenLight
+#### Overview of GreenLight
 
 Greenlight is a simple front-end interface for BigBlueButton server. At its heart, Greenlight provides a minimalistic web-based application that allows users to:
 
@@ -219,7 +209,7 @@ Invite others to your room using a simple URL.
 View recordings and share them with others.
 
 <!-- configuration -->
-### Greenlight Configuration
+#### Greenlight Configuration
 
 
 ```bash
@@ -227,19 +217,19 @@ $sudo mkdir greenlight
 $sudo cd greenlight
 ```
 
-### Greenlight will read its environment configuration from the .env file. To generate this file and install the Greenlight Docker image, run:
+#### Greenlight will read its environment configuration from the .env file. To generate this file and install the Greenlight Docker image, run:
 
 ```bash
 $sudo docker run --rm bigbluebutton/greenlight:v2 cat ./sample.env > .env
 ```
 
-### Configure Greenlight
+#### Configure Greenlight
 
 If you open the .env file you’ll see that it contains information for all of the Greenlight configuration options. Some of these are mandatory.
 
 After Installation, .env file you will see generated at ~/greenlight/.env.
 
-### Generating a Secret Key
+#### Generating a Secret Key
 
 Greenlight needs a secret key in order to run in production. To generate this, run:
 
@@ -249,7 +239,7 @@ $ sudo docker run --rm bigbluebutton/greenlight:v2 bundle exec rake secret
 
 Inside your .env file, set the SECRET_KEY_BASE option to this key. You don’t need to surround it in quotations.
 
-### Setting BigBlueButton Credentials
+#### Setting BigBlueButton Credentials
 
 By default, your Greenlight instance will automatically connect to test-install.blindsidenetworks.com if no BigBlueButton credentials are specified. To set Greenlight to connect to your BigBlueButton server (the one it’s installed on), you need to give Greenlight the endpoint and the secret. To get the credentials, run:
 
@@ -259,13 +249,13 @@ $ sudo bbb-conf --secret
 
 In your .env file, set the BIGBLUEBUTTON_ENDPOINT to the URL, and set BIGBLUEBUTTON_SECRET to the secret.
 
-### Setting Allowed Hosts
+#### Setting Allowed Hosts
 
 For reasons related to security, you’ll also need to specify the domain from which the application will be accessible from.
 
 In your .env file, set the SAFE_HOSTS to your domain. If Greenlight is accessible at https://meetup.bounceme.net/b then SAFE_HOSTS=https://meetup.bounceme.net/
 
-### Verifying Configuration
+#### Verifying Configuration
 
 Once you have finished setting the environment variables above in your .env file, to verify that you configuration is valid, run:
 
@@ -275,7 +265,7 @@ $ sudo docker run --rm --env-file .env bigbluebutton/greenlight:v2 bundle exec r
 
 If you have configured an SMTP server in your .env file, then all four tests must pass before you proceed. If you have not configured an SMTP server, then only the first three tests must pass before you proceed.
 
-### Configure Nginx to Route To Greenlight
+#### Configure Nginx to Route To Greenlight
 
 Greenlight will be configured to deploy at the /b subdirectory. This is necessary so it doesn’t conflict with the other BigBlueButton components. The Nginx configuration for this subdirectory is stored in the Greenlight image. To add this configuration file to your BigBlueButton server, run:
 
@@ -284,13 +274,13 @@ $ sudo docker run --rm bigbluebutton/greenlight:v2 cat ./greenlight.nginx | sudo
 ```
 
 
-### Verify the Nginx configuration file picks up the new configuration 
+#### Verify the Nginx configuration file picks up the new configuration 
 
 ```bash
 $ sudo systemctl restart nginx
 ```
 
-###  Start Greenlight 
+####  Start Greenlight 
 
 To start the Greenlight Docker container, you must install docker-compose, which simplifies the start and stop process for Docker containers.
 
@@ -330,30 +320,21 @@ $ docker-compose up -d
 
 This will start Greenlight, and you should be able to access it at https://<hostname>/b.
 
-### Create the user by following command
+#### Create the user by following command
 
 ```bash
 $ docker exec greenlight-v2 bundle exec rake user:create["User-Name","E-Mail Address","Password","User-Name"]
 ```
 
-### Log File 
+#### Log File 
 
 All of the logs from the application are also saved to the BigBlueButton server, which can be found at ~/greenlight/log
 
 
 <!-- Troubleshooting -->
 
-## Troubleshooting 
+### Troubleshooting 
 
-If you encounter an error  after follow all the instaraction please check the BigBlueButton Documentation.
-
-
-
-
-
-
-```bash
-$ docker exec greenlight-v2 bundle exec rake user:create["User-Name","E-Mail Address","Password","User-Name"]
-```
+If you encounter an error  after follow all the instaractions please check the BigBlueButton Documentation as well as you can check the GitHub 
 
 
