@@ -335,6 +335,6 @@ All of the logs from the application are also saved to the BigBlueButton server,
 
 ### Troubleshooting 
 
-If you encounter an error  after follow all the instaractions please check the BigBlueButton Documentation as well as you can check the GitHub 
+If you encounter an error  after follow all the instaractions please check the BigBlueButton Documentation.
 
 
