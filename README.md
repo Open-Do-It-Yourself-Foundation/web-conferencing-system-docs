@@ -47,20 +47,20 @@ WebRTC is a standard supported by all major browsers, including Chrome, FireFox,
 
 <!-- prerequisites -->
 
-#### prerequisites :
+#### prerequisites:
 
 System Requirements for BBB :
 
 | Requirements | Minimum | Recommended |
 |:-----:|:----:|:-----------:|
-| OS | Ubuntu 16.04 or 18.04 64 Bit |
+| OS | Ubuntu 16.04 or 18.04 64 Bit  |alike|
 | Core | 2/4 Core | 8 Core |
 |Memory | 8 GB | 16 GB |
 | Hdd | 50 GB (Without Recording) | 500 GB (With Recording)|
-| TCP Ports | 80 & 443 are accessible  |
-| UDP Ports| 16384 - 32768 are accessible |
-| HostName| A fully qualified domain name |
-| SSL Certificate| Use the Let's Encrypt [SSL](https://letsencrypt.org/)  |
+| TCP Ports | 80 & 443 are accessible  |alike|
+| UDP Ports| 16384 - 32768 are accessible |alike|
+| HostName| A fully qualified domain name |alike|
+| SSL Certificate| Use the Let's Encrypt [SSL](https://letsencrypt.org/)  |alike|
 ||||
 
 
